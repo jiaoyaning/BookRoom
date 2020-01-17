@@ -36,7 +36,6 @@ class MyFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         button_my.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_myFragment_to_homeFragment)
-
         }
     }
 

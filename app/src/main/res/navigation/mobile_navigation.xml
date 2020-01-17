@@ -3,27 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    tools:ignore="UnusedNavigation"
-    app:startDestination="@id/myFragment">
+    app:startDestination="@id/homeFragment"
+    tools:ignore="UnusedNavigation">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.jyn.bookroom.ui.fragment.HomeFragment"
         android:label="home_fragment"
-        tools:layout="@layout/home_fragment" >
+        tools:layout="@layout/home_fragment">
         <action
             android:id="@+id/action_homeFragment_to_myFragment"
             app:destination="@id/myFragment" />
+        <!--    app:destination表示要跳转的目的地    -->
     </fragment>
 
     <fragment
         android:id="@+id/myFragment"
         android:name="com.jyn.bookroom.ui.fragment.MyFragment"
         android:label="my_fragment"
-        tools:layout="@layout/my_fragment" >
+        tools:layout="@layout/my_fragment">
         <action
             android:id="@+id/action_myFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:popUpTo="@id/homeFragment" />
+        <!--    app:popUpTo表示要回退到之前的某个节点    -->
     </fragment>
 
 
